@@ -1,0 +1,7 @@
+<button id="nativeShare">Native Share</button>
+
+<script>
+  document.getElementById('nativeShare').addEventListener('click', () => {
+    navigator.share({'text': 'world'});
+  });
+</script>
