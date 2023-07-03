@@ -110,14 +110,6 @@
     <br />
     <br />
 
-    <button id="nativeShare">Native Share</button>
-
-<script>
-  document.getElementById('nativeShare').addEventListener('click', () => {
-    navigator.share({'text': 'world'});
-  });
-</script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
     <button id="copy">COPY</button>
     <script>
@@ -145,8 +137,26 @@
         alert("error " + e);
       }
     </script>
+
+    <button id="copy2">COPY</button>
+    <script>
+      function setClipboard(text) {
+        const type = "text/plain";
+        const blob = new Blob([text], { type });
+        const data = [new ClipboardItem({ [type]: blob })];
+
+        navigator.clipboard.write(data).then(
+          () => {
+            /* success */
+          },
+          () => {
+            /* failure */
+          }
+        );
+      }
+      document
+        .getElementById("copy2")
+        .addEventListener("click", () => setClipboard("hello"));
+    </script>
   </body>
 </html>
-
-
-
