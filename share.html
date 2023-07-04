@@ -123,6 +123,13 @@
             >twitter last</a
           >
         </dd>
+        <dt>intent url 을 external web 스킴으로</dt>
+        <dd>
+          <a
+            href="weverse://externweb?url=https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Ftext%3DHello%2520world%20http%3A%2F%2Fk.kakaocdn.net%2Fdn%2FQ2iNx%2FbtqgeRgV54P%2FVLdBs9cvyn8BJXB3o7N8UK%2Fkakaolink40_original.png"
+            >twitter last</a
+          >
+        </dd>
       </dl>
     </section>
     <section>
@@ -196,6 +203,32 @@
           </script>
         </dd>
       </dl>
+    </section>
+    <section>
+      <h2>Native Share API</h2>
+      <button id="nativeShare">공유하기</button>
+      <script>
+        document.getElementById("nativeShare").addEventListener("click", () => {
+          try {
+            window.navigator
+              .share({
+                // title: "share",
+                text: "hello https://n.news.naver.com/article/003/0011951952",
+                // url: "https://n.news.naver.com/article/003/0011951952",
+              })
+              .then(
+                () => {
+                  // alert('resolved');
+                },
+                () => {
+                  alert("share rejected");
+                }
+              );
+          } catch (e) {
+            alert("error on share" + e);
+          }
+        });
+      </script>
     </section>
   </body>
 </html>
