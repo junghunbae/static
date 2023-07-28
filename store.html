@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Welcome to nginx!</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff" />
+  </head>
+  <body>
+    <h1>
+      Share
+      <span
+        >v:<span id="version"></span>
+        <script>
+          document.querySelector("#version").innerHTML = Date.now();
+        </script></span
+      >
+      <button id="refresh">Refresh</button>
+      <script>
+        document.getElementById("refresh").addEventListener("click", () => {
+          location.reload();
+        });
+      </script>
+    </h1>
+    <a id="openInWeverse" href="#">이 페이지 위버스 인앱으로 열기</a>
+    <script>
+      document.getElementById("openInWeverse").href =
+        "weverse://web?url=" + encodeURIComponent(location.href);
+    </script>
+
+    <section>
+      <h2>스토어 이동 테스트</h2>
+      <ol>
+        <li>
+          <a
+            href="https://play.google.com/store/apps/details?id=co.benx.weverse&hl=ko&gl=US"
+            >and play store</a
+          >
+        </li>
+        <li>
+          <a href="https://apps.apple.com/app/id1456559188?mt=8"
+            >ios app store link</a
+          >
+        </li>
+        <li>
+          <a
+            href="weverse://externweb?url=https%3A%2F%2Fapps.apple.com%2Fapp%2Fid1456559188%3Fmt%3D8"
+            >ios app store external web</a
+          >
+        </li>
+        <li>
+          <a
+            href="weverse://externweb?url=https%3A%2F%2Fapps.apple.com%2Fapp%2Fid1456559188%3Fmt%3D8"
+            >ios app store external web</a
+          >
+        </li>
+      </ol>
+    </section>
+  </body>
+</html>
