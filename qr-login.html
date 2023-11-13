@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Welcome to nginx!</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff" />
+  </head>
+  <body>
+    <h1>
+      QR Login Test
+      <span
+        >v:<span id="version"></span>
+        <script>
+          document.querySelector("#version").innerHTML = Date.now();
+        </script></span
+      >
+      <button id="refresh">Refresh</button>
+      <script>
+        document.getElementById("refresh").addEventListener("click", () => {
+          location.reload();
+        });
+      </script>
+    </h1>
+    <a id="openInWeverse" href="#">이 페이지 위버스 인앱으로 열기</a>
+    <script>
+      document.getElementById("openInWeverse").href =
+        "weverse://web?url=" + encodeURIComponent(location.href);
+    </script>
+
+    <section>
+      <h2>QR Login 앱실행 </h2>
+      <ol>
+        <li>
+          <a href="https://weverseapp.page.link/?apn=co.benx.weverse&ibi=co.benx.weverse&isi=1456559188&ius=weverse&link=https%3A%2F%2Fweverse.io%2Fqrscanner&ofl=https%3A%2F%2Faccount.weverse.io%2Fguide%2Fqr-login"
+            >QR Login 앱실행</a
+          >
+        </li>
+      </ol>
+    </section>
+  </body>
+</html>
