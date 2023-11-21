@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Welcome to nginx!</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff" />
+  </head>
+  <body>
+    <h1>
+      QR Survey Link Test
+      <span
+        >v:<span id="version"></span>
+        <script>
+          document.querySelector("#version").innerHTML = Date.now();
+        </script></span
+      >
+      <button id="refresh">Refresh</button>
+      <script>
+        document.getElementById("refresh").addEventListener("click", () => {
+          location.reload();
+        });
+      </script>
+    </h1>
+    <a id="openInWeverse" href="#">이 페이지 위버스 인앱으로 열기</a>
+    <script>
+      document.getElementById("openInWeverse").href =
+        "weverse://web?url=" + encodeURIComponent(location.href);
+    </script>
+
+    <section>
+      <h2>QR Survey 앱실행 </h2>
+      <ol>
+        <li>
+          links?a=a <a href="weverse://web?url=https%3A%2F%2Fwev_survey%3Aweverse1!%40survey-qa.weversedev.io%2Flinks%3Fa%3Da%26sk%3Dsxwb28xciv%26ac%3DG9X5R3HJ7U8Z3QCVRL74"
+            >weverse://web?url=https%3A%2F%2Fwev_survey%3Aweverse1!%40survey-qa.weversedev.io%2Flinks%3Fa%3Da%26sk%3Dsxwb28xciv%26ac%3DG9X5R3HJ7U8Z3QCVRL74</a
+          >
+        </li>
+        <li>
+          links?a <a href="weverse://web?url=https%3A%2F%2Fwev_survey%3Aweverse1!%40survey-qa.weversedev.io%2Flinks%3Fa%26sk%3Dsxwb28xciv%26ac%3DG9X5R3HJ7U8Z3QCVRL74"
+            >weverse://web?url=https%3A%2F%2Fwev_survey%3Aweverse1!%40survey-qa.weversedev.io%2Flinks%3Fa%3Da%26sk%3Dsxwb28xciv%26ac%3DG9X5R3HJ7U8Z3QCVRL74</a
+          >
+        </li>
+      </ol>
+    </section>
+  </body>
+</html>
