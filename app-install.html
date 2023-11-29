@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>App Install Test</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff" />
+  </head>
+  <body>
+    <h1>
+      Share
+      <span
+        >v:<span id="version"></span>
+        <script>
+          document.querySelector("#version").innerHTML = Date.now();
+        </script></span
+      >
+      <button id="refresh">Refresh</button>
+      <script>
+        document.getElementById("refresh").addEventListener("click", () => {
+          location.reload();
+        });
+      </script>
+    </h1>
+
+    <section>
+      <h2>앱설치 테스트</h2>
+      <ol>
+        <li>
+          <a
+            href="https://weverseapp.page.link/?apn=co.benx.weverse&ibi=co.benx.weverse&isi=1456559188&ius=weverse&link=https%3A%2F%2Fweverse.io%2Fbts%2Ffeed"
+            >IOS preview 있음</a
+          >
+        </li>
+        <li>
+          <a href="https://weverseapp.page.link/?apn=co.benx.weverse&ibi=co.benx.weverse&isi=1456559188&ius=weverse&link=https%3A%2F%2Fweverse.io%2Fbts%2Ffeed&efr=1"
+            >IOS preview 없음</a
+          >
+        </li>
+        
+      </ol>
+    </section>
+  </body>
+</html>
