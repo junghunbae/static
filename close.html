@@ -32,8 +32,8 @@
       <h2>닫기 </h2>
       <ol>
         <li>
-          <a href="weverse://__close__"
-            >닫기</a
+          <a href="https://weverse.io/__close__"
+            >https://weverse.io/__close__</a
           >
         </li>
         <li>
@@ -51,7 +51,33 @@
             >더보기</a
           >
         </li>
+        <li>
+          <button id="pta">And set Page title</button>
+          <textarea id="ptar"></textarea>
+          <script>
+            document.getElementById('pta').addEventListener('click', () => {
+              try {
+                PageInfo.onInfoChanged(JSON.stringfy({title: 'title changed:' + Date.now()}));
+              } catch (e) {
+                document.getElementById('ptar').innerHTML = e;
+              }
+            });
+          </script>
+        </li>
+        <li>
+          <button id="pti">iOS set Page title</button>
+          <textarea id="ptir"></textarea>
+          <script>
+            document.getElementById('pti').addEventListener('click', () => {
+              try {
+                window.webkit.messageHandlers.onListAppbar.postMessage(JSON.stringfy({title: 'title changed:' + Date.now()}));
 
+              } catch (e) {
+                document.getElementById('ptir').innerHTML = e;
+              }
+            });
+          </script>
+        </li>
       </ol>
     </section>
   </body>
