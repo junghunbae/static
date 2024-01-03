@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Media Test</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff" />
+  </head>
+  <body>
+    <h1>
+      Media Test
+      <span
+        >v:<span id="version"></span>
+        <script>
+          document.querySelector("#version").innerHTML = Date.now();
+        </script></span
+      >
+      <button id="refresh">Refresh</button>
+      <script>
+        document.getElementById("refresh").addEventListener("click", () => {
+          location.reload();
+        });
+      </script>
+    </h1>
+
+    <section>
+      <h2>미디어 엔드 링크</h2>
+      <ol>
+        <li>
+          <a
+            href="https://weverse.io/lesserafim/media/3-141445331"
+            >https://weverse.io/lesserafim/media/3-141445331 링크 열기</a
+          >
+        </li>
+      </ol>
+    </section>
+  </body>
+</html>
