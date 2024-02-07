@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Welcome to nginx!</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff" />
+  </head>
+  <body>
+    <h1>
+      UI
+      <span
+        >v:<span id="version"></span>
+        <script>
+          document.querySelector("#version").innerHTML = Date.now();
+        </script></span
+      >
+      <button id="refresh">Refresh</button>
+      <script>
+        document.getElementById("refresh").addEventListener("click", () => {
+          location.reload();
+        });
+      </script>
+    </h1>
+    <a id="openInWeverse" href="#">이 페이지 위버스 인앱으로 열기</a>
+    <script>
+      document.getElementById("openInWeverse").href =
+        "weverse://web?url=" + encodeURIComponent(location.href);
+    </script>
+
+    <section>
+      <h2>Select box</h2>
+      <select>
+        <option value="1">value 1</option>
+        <option value="2">value 2</option>
+        <option value="3">value 3</option>
+      </select>
+    </section>
+  </body>
+</html>
