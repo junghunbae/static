@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Fanevent navigation</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff" />
+  </head>
+  <body>
+    <h1>
+      Fanevent navigation
+      <span
+        >v:<span id="version"></span>
+        <script>
+          document.querySelector("#version").innerHTML = Date.now();
+        </script></span
+      >
+      <button id="refresh">Refresh</button>
+      <script>
+        document.getElementById("refresh").addEventListener("click", () => {
+          location.reload();
+        });
+      </script>
+    </h1>
+    <a id="openInWeverse" href="#">이 페이지 위버스 인앱으로 열기</a>
+    <script>
+      document.getElementById("openInWeverse").href =
+        "weverse://web?url=" + encodeURIComponent(location.href);
+    </script>
+    <section>
+        <h1>Page Showing</h1>
+        <pre id="pageshow"></pre>
+        <pre id="focus"></pre>
+        
+        <pre id="visibility"></pre>
+        <script>
+            window.addEventListener('pageshow', () => {
+                console.log('pageshow');
+                document.getElementById('pageshow').innerHTML = 'pageshow: ' + new Date().toString();
+
+            });
+            window.addEventListener('focus', () => {
+                console.log('focus');
+                document.getElementById('focus').innerHTML = 'focus: ' + new Date().toString();
+
+            });
+
+            document.addEventListener("visibilitychange", () => {
+                const dom = document.getElementById('visibility');
+                if (document.hidden) {
+                    dom.innerHTML = 'hidden';
+                  } else {
+                    dom.innerHTML = 'show: ' + new Date().toString();
+                }
+            });
+        </script>
+    </section>
+
+    <section>
+      <h2>Fanevent </h2>
+      <ol>
+        <li><a href="weverse://shop/artists/0/notices/719?shop=GL">샵 공지사항 상세 스킴? weverse://shop/artists/0/notices/719?shop=GL</a></li>
+      </ol>
+    </section>
+  </body>
+</html>
