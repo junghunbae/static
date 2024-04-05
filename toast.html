@@ -72,7 +72,16 @@
 	<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id velit tempore, commodi minima quisquam aperiam magni eaque hic ipsam cumque quas. Labore sed atque numquam culpa in repellendus modi iure!</p>
 	<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id velit tempore, commodi minima quisquam aperiam magni eaque hic ipsam cumque quas. Labore sed atque numquam culpa in repellendus modi iure!</p>
 	<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id velit tempore, commodi minima quisquam aperiam magni eaque hic ipsam cumque quas. Labore sed atque numquam culpa in repellendus modi iure!</p>
-  <input type="text">
+  <input type="text"> <br/>
+  <textarea id="size" readonly>
+
+  </textarea>
+  <script>
+    function calc() {
+      document.getElementById('size').innerHTML = JSON.stringify(document.body.getBoundingClientRect());
+    }
+    setInterval(calc, 500);
+  </script>
 	<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id velit tempore, commodi minima quisquam aperiam magni eaque hic ipsam cumque quas. Labore sed atque numquam culpa in repellendus modi iure!</p>
 	<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id velit tempore, commodi minima quisquam aperiam magni eaque hic ipsam cumque quas. Labore sed atque numquam culpa in repellendus modi iure!</p>
 	<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id velit tempore, commodi minima quisquam aperiam magni eaque hic ipsam cumque quas. Labore sed atque numquam culpa in repellendus modi iure!</p>
