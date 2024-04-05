@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to nginx!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="theme-color" content="#fff" />
+    <style>
+      html {
+        color-scheme: light dark;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      inapp
+      <span
+        >version <span id="version"></span>
+        <script>
+          document.querySelector("#version").innerHTML = Date.now();
+        </script></span
+      >
+      <button id="refresh">Refresh</button>
+      <script>
+        document.getElementById("refresh").addEventListener("click", () => {
+          location.reload();
+        });
+      </script>
+    </h1>
+    <button id="close">go</button>
+    <button id="share">share</button>
+    <script>
+      // window.addEventListener("load", () => {
+      //   location.href =
+      //     "globalv://externweb?url=http%3A%2F%2F172.30.1.52%2F50x.html";
+      // });
+
+      document.querySelector("#close").addEventListener("click", (e) => {
+        e.target.style.color = "red";
+        location.href =
+          "globalv://externweb?url=http%3A%2F%2F172.30.1.52%2F50x.html";
+      });
+
+      document.querySelector("#share").addEventListener("click", (e) => {
+        alert("share: " + window.navigator.share);
+        try {
+          window.navigator.share({
+            title: document.title,
+            text: "Hello World",
+            url: "https://developer.mozilla.org",
+          }); // share the URL of MDN
+        } catch (e) {
+          alert(e);
+        }
+      });
+    </script>
+    <style>
+      .toast {
+        position: fixed;
+  align-items: center;
+  top: 0;
+  margin-bottom: 1.2rem;
+  padding: 1.2rem;
+  width: calc(100vw - 4.8rem);
+  background-color: bisque;
+  border: solid 1px;
+
+      }
+    </style>
+
+  <header>fixed header and footer, fixed</header>
+<main>
+	<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id velit tempore, commodi minima quisquam aperiam magni eaque hic ipsam cumque quas. Labore sed atque numquam culpa in repellendus modi iure!</p>
+	<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id velit tempore, commodi minima quisquam aperiam magni eaque hic ipsam cumque quas. Labore sed atque numquam culpa in repellendus modi iure!</p>
+	<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id velit tempore, commodi minima quisquam aperiam magni eaque hic ipsam cumque quas. Labore sed atque numquam culpa in repellendus modi iure!</p>
+  <input type="text">
+</main>
+<footer>I am the bottom bar</footer>
+    <div class="toast">toast message</div>
+ 
+  </body>
+</html>
