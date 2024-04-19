@@ -29,17 +29,24 @@
     </script>
 
     <section>
-      <pre id="language"></pre>
+      <dl>
+        <dt>language:</dt>
+        <dd id="language"></dd>
+        <dt>languages:</dt>
+        <dd id="languages"></dd>
+        <dt>userAgent:</dt>
+        <dd id="userAgent"></dd>
+      </dl>
+      
       <script>
         document.getElementById("language").innerHTML = navigator.language
       </script>
-      <pre id="languages"></pre>
       
       <script>
         document.getElementById("languages").innerHTML = navigator.languages
       </script>
-      <pre id="userAgent"></pre>
-          <script>
+
+      <script>
         document.getElementById("userAgent").innerHTML = navigator.userAgent
       </script>
     </section>
