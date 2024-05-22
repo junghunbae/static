@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Welcome to nginx!</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff" />
+  </head>
+  <body>
+    <h1>
+      Share
+      <span
+        >v:<span id="version"></span>
+        <script>
+          document.querySelector("#version").innerHTML = Date.now();
+        </script></span
+      >
+      <button id="refresh">Refresh</button>
+      <script>
+        document.getElementById("refresh").addEventListener("click", () => {
+          location.reload();
+        });
+      </script>
+    </h1>
+    <a id="openInWeverse" href="#">이 페이지 위버스 인앱으로 열기</a>
+    <script>
+      document.getElementById("openInWeverse").href =
+        "weverse://web?url=" + encodeURIComponent(location.href);
+    </script>
+
+    <section>
+      <h2>스토어 이동 테스트</h2>
+      <ul>
+        <li><a href="weverse://externweb?url=https%3A%2F%2Faccount-qa.weversedev.io%2Fsso%3Fdeparture%3Dweverse%26destination%3D9439e3a6b7a6fcb0e33c2c528413ddc8%26redirectUri%3Dhttps%253A%252F%252Fstage-events.kiswe.com%252F%252Fevents%252FTEN-1001">extern 열기</a></li>
+
+        <li><a href="https://account-qa.weversedev.io/ko/ssolink/kiswe/events/TEN-1001?extern=true">내부 열기</a></li>
+      </ul>
+    </section>
+    <script>
+      if (location.href.includes('run')) {
+        location.href = "weverse://externweb?url=https%3A%2F%2Faccount-qa.weversedev.io%2Fsso%3Fdeparture%3Dweverse%26destination%3D9439e3a6b7a6fcb0e33c2c528413ddc8%26redirectUri%3Dhttps%253A%252F%252Fstage-events.kiswe.com%252F%252Fevents%252FTEN-1001"
+      }
+    </script>
+  </body>
+</html>
