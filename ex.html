@@ -29,10 +29,11 @@
     </script>
 
     <section>
-      <h2>스토어 이동 테스트</h2>
+      <h2>이동 테스트</h2>
       <ul>
         <li><a href="weverse://externweb?url=https%3A%2F%2Faccount-qa.weversedev.io%2Fsso%3Fdeparture%3Dweverse%26destination%3D9439e3a6b7a6fcb0e33c2c528413ddc8%26redirectUri%3Dhttps%253A%252F%252Fstage-events.kiswe.com%252F%252Fevents%252FTEN-1001">extern 열기</a></li>
         <li><a href="weverse://web?url=https%3A%2F%2Faccount-qa.weversedev.io%2Fsso%3Fdeparture%3Dweverse%26destination%3D9439e3a6b7a6fcb0e33c2c528413ddc8%26redirectUri%3Dhttps%253A%252F%252Fstage-events.kiswe.com%252F%252Fevents%252FTEN-1001">웹뷰에서 열기</a></li>
+        
         <li><a href="weverse://externweb?url=https%3A%2F%2Faccount-qa.weversedev.io%2Fko%2Fsso%3Fdeparture%3Dweverse%26destination%3D9439e3a6b7a6fcb0e33c2c528413ddc8%26redirectUri%3Dhttps%253A%252F%252Fstage-events.kiswe.com%252F%252Fevents%252FTEN-1001">extern 열기</a></li>
 
         <li><a href="https://account-qa.weversedev.io/ko/ssolink/kiswe/events/TEN-1001?extern=true">내부 열기</a></li>
@@ -42,10 +43,22 @@
         
       </ul>
     </section>
+    <section>
+      <h2>이동 URL 테스트</h2>
+      <li><a href="weverse://web?url=https%3A%2F%2Fjunghunbae.github.io%2Fstatic%2Fex.html">웹뷰에서 열기1</a></li>
+      <li><a href="weverse://web?url=https%3A%2F%2Fjunghunbae.github.io%2Fstatic%2Fex.html%3Fa%3D1">웹뷰에서 열기2</a></li>
+      <li><a href="weverse://web?url=https%3A%2F%2Fjunghunbae.github.io%2Fstatic%2Fex.html%3Fa%3D1%26b%3D2">웹뷰에서 열기3</a></li>
+    </section>
     <script>
       if (location.href.includes('run')) {
         location.href = "weverse://externweb?url=https%3A%2F%2Faccount-qa.weversedev.io%2Fsso%3Fdeparture%3Dweverse%26destination%3D9439e3a6b7a6fcb0e33c2c528413ddc8%26redirectUri%3Dhttps%253A%252F%252Fstage-events.kiswe.com%252F%252Fevents%252FTEN-1001"
       }
+    </script>
+    <section id="urlview">
+      
+    </section>
+    <script>
+      document.getElementById("urlview").innerHTML = location.href;
     </script>
   </body>
 </html>
